@@ -1,0 +1,17 @@
+<div class="header">
+  <nav>
+    <a [routerLink]="'/' | localize" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+      {{'HOME' | translate}}
+    </a>
+    <a [routerLink]="'/login' | localize" [routerLinkActive]="['router-link-active']">
+      {{'login' | translate}}
+    </a>
+  </nav>
+
+  <span class="button-bar" style="float: right">
+    <a [routerLink]="'/en'" [routerLinkActive]="['router-link-active']">EN</a>
+    <a [routerLink]="'/de'" [routerLinkActive]="['router-link-active']">DE</a>
+  </span>
+
+
+</div>

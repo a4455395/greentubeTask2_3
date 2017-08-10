@@ -1,0 +1,30 @@
+<div class="container">
+  <div>
+    <h2>{{'login' | translate}}</h2>
+    <form #f="ngForm" novalidate (ngSubmit)="login(f.value, f.valid)">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" class="form-control" name="email" [ngModel]="user.email"
+               required
+               validateEmail="email"
+               #email="ngModel">
+        <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
+          Email format should be <i>mail@mail.com</i>.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="password">{{'password' | translate}}</label>
+        <input id="password" type="password" class="form-control" name="password"
+               validatePassword="password"
+               [ngModel]="user.password"
+               required
+               #password="ngModel">
+        <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">
+          Password is required and should be more than 5 symbols, at least one number and one special character
+        </small>
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!f.valid">{{'submit' | translate}}</button>
+    </form>
+  </div>
+
+</div>
