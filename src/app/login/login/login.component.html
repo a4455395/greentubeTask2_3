@@ -20,7 +20,7 @@
                required
                #password="ngModel">
         <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">
-          Password is required and should be more than 5 symbols, at least one number and one special character
+          Password is required and should<br>be more than 5 symbols, at least<br> one number and one special character
         </small>
       </div>
       <button type="submit" class="btn btn-default" [disabled]="!f.valid">{{'submit' | translate}}</button>
